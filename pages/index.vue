@@ -1,33 +1,13 @@
 <template>
-  <v-layout column justify-center align-center>
-    <v-flex xs12 sm8 md6>
-      <div class="text-center">eCommerce</div>
-      <v-card>
-        <v-card-title>testing</v-card-title>
-        <v-list>
-          <v-list-item v-for="product in products" :key="product.id">
-            <h1>{{product.title}}</h1>
-          </v-list-item>
-        </v-list>
-      </v-card>
-    </v-flex>
-  </v-layout>
+  <v-row column justify-center align-center>
+    <v-col xs12 sm8 md6></v-col>
+  </v-row>
 </template>
 
 <script>
 import { mapMutations } from 'vuex'
 
 export default {
-  // async fetch({ store, params }) {
-  //   let { catalogue } = await axios.get(
-  //     'https://my-json-server.typicode.com/tdmichaelis/json-api/products'
-  //   )
-  //   let { categories } = await axios.get(
-  //     'https://my-json-server.typicode.com/tdmichaelis/json-api/categories'
-  //   )
-  //   this.$store.commit('products/setCatalogue', catalogue)
-  //   this.$store.commit('products/setCategories', categories)
-  // },
   mounted() {
     this.$store.dispatch('products/fetchCatalogue')
   },
