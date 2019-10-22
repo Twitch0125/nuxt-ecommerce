@@ -12,7 +12,7 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" fixed app>
+    <v-app-bar :clipped-left="clipped" fixed app color="primary">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-btn icon @click.stop="miniVariant = !miniVariant">
         <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
@@ -27,7 +27,7 @@
       <v-spacer />
     </v-app-bar>
     <v-content>
-      <v-container fluid="true">
+      <v-container :fluid="fluid">
         <nuxt />
       </v-container>
     </v-content>
@@ -41,6 +41,7 @@
 export default {
   data() {
     return {
+      fluid: false,
       clipped: false,
       drawer: false,
       fixed: false,

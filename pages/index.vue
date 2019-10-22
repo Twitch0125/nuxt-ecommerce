@@ -1,6 +1,9 @@
 <template>
-  <v-row column justify-center align-center>
-    <v-col xs12 sm8 md6></v-col>
+  <v-row dense justify-center align-center>
+    <v-col v-for="product in products" :key="product.id" cols="6" sm="4" md="2" lg="2">
+      <v-skeleton-loader v-show="skeletonShown" type="card"></v-skeleton-loader>
+      <!-- <v-card></v-card> -->
+    </v-col>
   </v-row>
 </template>
 
@@ -8,6 +11,11 @@
 import { mapMutations } from 'vuex'
 
 export default {
+  data() {
+    return {
+      skeletonShown: true
+    }
+  },
   mounted() {
     this.$store.dispatch('products/fetchCatalogue')
   },
