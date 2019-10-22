@@ -24,10 +24,10 @@ export const mutations = {
 export const actions = {
   async fetchCatalogue(context) {
     context.commit('SET_LOADING_STATUS', true)
-    let catalogue = await axios.get(
+    let response = await this.$axios.get(
       'https://my-json-server.typicode.com/tdmichaelis/json-api/products'
     )
     context.commit('SET_LOADING_STATUS', false)
-    context.commit('SET_CATALOGUE', catalogue)
+    context.commit('SET_CATALOGUE', response.data)
   }
 }

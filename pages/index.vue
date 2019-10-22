@@ -5,7 +5,9 @@
       <v-card>
         <v-card-title>testing</v-card-title>
         <v-list>
-          <v-list-item v-for="product in products" :key="product.id"></v-list-item>
+          <v-list-item v-for="product in products" :key="product.id">
+            <h1>{{product.title}}</h1>
+          </v-list-item>
         </v-list>
       </v-card>
     </v-flex>
@@ -27,7 +29,7 @@ export default {
   //   this.$store.commit('products/setCategories', categories)
   // },
   mounted() {
-    this.$store.dispatch('fetchCatalogue')
+    this.$store.dispatch('products/fetchCatalogue')
   },
   computed: {
     products() {
