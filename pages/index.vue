@@ -1,8 +1,8 @@
 <template>
-  <v-row dense justify-center align-center>
+  <v-row justify-center align-center>
     <v-col v-for="product in products" :key="product.id" cols="6" sm="4" md="2" lg="2">
       <v-skeleton-loader v-show="skeletonShown" type="card"></v-skeleton-loader>
-      <v-card :flat="flat" outlined hover :elevation="mobile ? 4:0">
+      <v-card outlined hover :elevation="mobile ? 4:undefined">
         <v-img
           height="200px"
           contain
@@ -29,7 +29,6 @@ export default {
     return {
       skeletonShown: false,
       loading: true,
-      flat: true,
       //checks if the viewport is below the xs threshold, i.e "<600px"
       mobile: this.$vuetify.breakpoint.xsOnly
     }
