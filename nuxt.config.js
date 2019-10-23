@@ -61,7 +61,7 @@ export default {
         light: {
           primary: '#00ecaa',
           secondary: '#35495E',
-          accent: colors.green.base,
+          accent: '#35495E',
           error: colors.pink.base,
           warning: colors.red.base,
           info: colors.deepPurple.base,
