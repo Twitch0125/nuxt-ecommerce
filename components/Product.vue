@@ -1,6 +1,8 @@
 <template>
   <v-card outlined hover :elevation="mobile ? 1:undefined">
-    <v-card-title class="card-title body-1 text-truncate">{{product.title}}</v-card-title>
+    <v-card-title
+      class="card-title body-1 text-truncate primary--background-color"
+    >{{product.title}}</v-card-title>
 
     <v-img height="200px" contain :src="product.img" :alt="product.description">
       <template v-slot:placeholder>
@@ -28,8 +30,15 @@
 </template>
 
 <style lang="scss">
+@import '~vuetify/src/styles/styles.sass';
+
 .primary--background-color {
-  background-color: $vuetify.primary;
+  background-color: var(--v-primary-base);
+  color: $my-font-color;
+}
+.secondary--background-color {
+  color: var(--v-primary-base);
+  background-color: $my-font-color;
 }
 </style>
 
