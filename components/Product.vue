@@ -27,6 +27,12 @@
   </v-card>
 </template>
 
+<style lang="scss">
+.primary--background-color {
+  background-color: $vuetify.primary;
+}
+</style>
+
 <script>
 export default {
   data() {

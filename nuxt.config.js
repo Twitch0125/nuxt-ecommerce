@@ -59,7 +59,7 @@ export default {
 
       themes: {
         light: {
-          primary: '#00ecaa',
+          primary: '#02c38d',
           secondary: '#35495E',
           accent: '#35495E',
           error: colors.pink.base,
