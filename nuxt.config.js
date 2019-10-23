@@ -60,7 +60,7 @@ export default {
       themes: {
         light: {
           primary: '#00ecaa',
-          secondary: colors.amber.base,
+          secondary: '#35495E',
           accent: colors.green.base,
           error: colors.pink.base,
           warning: colors.red.base,

@@ -18,11 +18,11 @@
     </v-expand-transition>
     <v-divider></v-divider>
     <v-card-actions class="justify-space-between">
-      <v-btn text>
-        ${{product.price}}
+      <v-btn color="secondary">
         <v-icon>mdi-cart-plus</v-icon>
+        ${{product.price}}
       </v-btn>
-      <v-btn text @click="expand = !expand">More...</v-btn>
+      <v-btn color="secondary" text @click="expand = !expand">More...</v-btn>
     </v-card-actions>
   </v-card>
 </template>
