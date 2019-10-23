@@ -29,5 +29,13 @@ export const actions = {
     )
     context.commit('SET_LOADING_STATUS', false)
     context.commit('SET_CATALOGUE', response.data)
+  },
+  async fetchCategories(context) {
+    context.commit('SET_LOADING_STATUS', true)
+    let response = await this.$axios.get(
+      'https://my-json-server.typicode.com/tdmichaelis/json-api/categories'
+    )
+    context.commit('SET_LOADING_STATUS', false)
+    context.commit('SET_CATEGORIES', response.data)
   }
 }
