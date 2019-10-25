@@ -20,10 +20,12 @@
     </v-expand-transition>
     <v-divider></v-divider>
     <v-card-actions class="justify-space-between">
-      <v-btn color="secondary">
+      <!-- <v-btn color="secondary">
         <v-icon>mdi-cart-plus</v-icon>
         ${{product.price}}
-      </v-btn>
+      </v-btn>-->
+      <BuyButton :product="product"></BuyButton>
+
       <v-btn color="secondary" text @click="expand = !expand">More...</v-btn>
     </v-card-actions>
   </v-card>
@@ -43,6 +45,8 @@
 </style>
 
 <script>
+import BuyButton from '~/components/BuyButton.vue'
+
 export default {
   data() {
     return {
@@ -50,6 +54,9 @@ export default {
       //checks if the viewport is below the xs threshold, i.e "<600px"
       mobile: this.$vuetify.breakpoint.xsOnly
     }
+  },
+  components: {
+    BuyButton
   },
   props: {
     product: Object

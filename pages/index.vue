@@ -31,9 +31,7 @@ export default {
     Product
   },
   data() {
-    return {
-
-    }
+    return {}
   },
   mounted() {
     this.$store.dispatch('products/fetchCatalogue')
