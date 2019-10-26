@@ -11,7 +11,13 @@
         </v-row>
       </template>
     </v-img>
-    <v-rating v-model="product.rating" readonly background-color="primary" color="primary"></v-rating>
+    <v-rating
+      v-model="product.rating"
+      half-increments
+      readonly
+      background-color="primary"
+      color="primary"
+    ></v-rating>
 
     <v-expand-transition>
       <div v-show="expand">
