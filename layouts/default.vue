@@ -83,6 +83,9 @@ export default {
     this.$store.dispatch('products/fetchCategories')
   },
   methods: {
+    setCategory(){
+
+    },
     ...mapMutations({})
   }
 }

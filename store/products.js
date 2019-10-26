@@ -1,7 +1,8 @@
 export const state = () => ({
   catalogue: [],
   categories: [],
-  loadingStatus: false
+  loadingStatus: false,
+  selectedCategories: []
 })
 
 export const mutations = {
@@ -42,5 +43,8 @@ export const actions = {
     )
     context.commit('SET_LOADING_STATUS', false)
     context.commit('SET_CATEGORIES', response.data)
+  },
+  setCategory(context, category){
+    
   }
 }
