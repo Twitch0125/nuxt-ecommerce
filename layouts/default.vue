@@ -2,6 +2,7 @@
   <v-app>
     <script defer src="https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.js"></script>
     <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.css" />
+    <!-- public test API key -->
     <div
       hidden
       id="snipcart"
