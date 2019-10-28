@@ -1,13 +1,13 @@
 <template>
   <v-app>
-    <script defer src="https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.js"></script>
-    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.css" />
+    <!-- <script defer src="https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.js"></script>
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.css" />-->
     <!-- public test API key -->
-    <div
+    <!-- <div
       hidden
       id="snipcart"
       data-api-key="OGVlMzI0NzQtM2E4Ny00OWQyLThhOGMtZDIzNmIxYjVlNjYyNjM3MDc1MzkwNDg5NDIyOTIx"
-    ></div>
+    ></div>-->
     <v-navigation-drawer v-model="drawer" :mini-variant="miniVariant" :clipped="clipped" fixed app>
       <div class="display-1 d-flex justify-center font-weight-light primary--text">VueCommerce</div>
       <v-list>
@@ -31,13 +31,13 @@
       <v-divider></v-divider>
       <v-list>
         <v-list-item v-for="(category, i) in categories" :key="i">
-          <v-lists-item-content>
+          <v-list-item-content>
             <v-list-item-title class="secondary--text text-capitalize" v-text="category" />
-          </v-lists-item-content>
+          </v-list-item-content>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar v-if="mobile" :clipped-left="clipped" fixed app color="white">
+    <v-app-bar v-if="mobile | small | medium" :clipped-left="clipped" fixed app color="white">
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
 
       <v-toolbar-title v-text="'VueCommerce'" />
@@ -64,6 +64,8 @@ export default {
       drawer: true,
       fixed: false,
       mobile: this.$vuetify.breakpoint.xsOnly,
+      small: this.$vuetify.breakpoint.smOnly,
+      medium: this.$vuetify.breakpoint.mdOnly,
       items: [
         {
           icon: 'mdi-store',
@@ -83,9 +85,7 @@ export default {
     this.$store.dispatch('products/fetchCategories')
   },
   methods: {
-    setCategory(){
-
-    },
+    setCategory() {},
     ...mapMutations({})
   }
 }
