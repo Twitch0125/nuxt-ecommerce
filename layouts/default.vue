@@ -1,13 +1,13 @@
 <template>
   <v-app>
-    <!-- <script defer src="https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.js"></script>
-    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.css" />-->
+    <script defer src="https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.js"></script>
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.0/default/snipcart.css" />
     <!-- public test API key -->
-    <!-- <div
+    <div
       hidden
       id="snipcart"
       data-api-key="OGVlMzI0NzQtM2E4Ny00OWQyLThhOGMtZDIzNmIxYjVlNjYyNjM3MDc1MzkwNDg5NDIyOTIx"
-    ></div>-->
+    ></div>
     <v-navigation-drawer v-model="drawer" :mini-variant="miniVariant" :clipped="clipped" fixed app>
       <div class="display-1 d-flex justify-center font-weight-light primary--text">VueCommerce</div>
       <v-list>
