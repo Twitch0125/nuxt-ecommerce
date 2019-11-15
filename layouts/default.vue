@@ -8,7 +8,14 @@
       id="snipcart"
       data-api-key="OGVlMzI0NzQtM2E4Ny00OWQyLThhOGMtZDIzNmIxYjVlNjYyNjM3MDc1MzkwNDg5NDIyOTIx"
     ></div>
-    <v-navigation-drawer v-model="drawer" :mini-variant="miniVariant" :clipped="clipped" fixed app>
+    <v-navigation-drawer
+      class="elevation-1"
+      v-model="drawer"
+      :mini-variant="miniVariant"
+      :clipped="clipped"
+      fixed
+      app
+    >
       <div class="display-1 d-flex justify-center font-weight-light primary--text">VueCommerce</div>
       <v-list>
         <v-list-item v-for="(item, i) in items" :key="i" :to="item.to" router exact>
@@ -56,9 +63,6 @@
         <nuxt />
       </v-container>
     </v-content>
-    <v-footer :fixed="fixed" app>
-      <span>&copy; 2019</span>
-    </v-footer>
   </v-app>
 </template>
 
