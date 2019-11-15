@@ -30,11 +30,19 @@
       </v-list>
       <v-divider></v-divider>
       <v-list>
-        <v-list-item v-for="(category, i) in categories" :key="i">
-          <v-list-item-content>
-            <v-list-item-title class="secondary--text text-capitalize" v-text="category" />
-          </v-list-item-content>
-        </v-list-item>
+        <v-list-item-group>
+          <v-list-item
+            v-for="(category, i) in categories"
+            :class="{'v-item--active':isSelected(category), 'v-list-item--active': isSelected(category)}"
+            :key="i"
+            @click="selectCategory(category)"
+            :ref="`${category}`"
+          >
+            <v-list-item-content>
+              <v-list-item-title class="secondary--text text-capitalize" v-text="category" />
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
     <v-app-bar v-if="mobile | small | medium" :clipped-left="clipped" fixed app color="white">
@@ -79,13 +87,25 @@ export default {
   computed: {
     categories() {
       return this.$store.state.products.categories
+    },
+    selectedCategories() {
+      return this.$store.state.products.selectedCategories
     }
   },
   mounted() {
     this.$store.dispatch('products/fetchCategories')
   },
   methods: {
-    setCategory() {},
+    isSelected(category) {
+      return this.$store.state.products.selectedCategories.includes(category)
+    },
+    selectCategory(category) {
+      if (this.$store.state.products.selectedCategories.includes(category)) {
+        this.$store.dispatch('products/removeCategory', category)
+      } else {
+        this.$store.dispatch('products/pushCategory', category)
+      }
+    },
     ...mapMutations({})
   }
 }

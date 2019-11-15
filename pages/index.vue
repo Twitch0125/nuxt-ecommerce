@@ -1,12 +1,12 @@
 <template>
   <v-row justify-center align-center>
     <v-col
-      v-for="product in products"
+      v-for="product in filteredProducts"
       :key="product.id"
       cols="12"
       sm="4"
-      md="2"
-      lg="2"
+      md="4"
+      lg="3"
       text-capitalize
     >
       <v-skeleton-loader v-show="loadingStatus" type="card"></v-skeleton-loader>
@@ -40,6 +40,15 @@ export default {
     products() {
       return this.$store.state.products.catalogue
     },
+    filteredProducts() {
+      if (this.$store.state.products.selectedCategories.length) {
+        return this.products.filter(product =>
+          this.$store.state.products.selectedCategories.includes(
+            product.category
+          )
+        )
+      } else return this.products
+    },
     cart() {
       return this.$store.state.cart.cart
     },
@@ -48,6 +57,9 @@ export default {
     }
   },
   methods: {
+    isFiltered(product) {
+      return this.filteredProducts.includes(product)
+    },
     addToCart(product) {
       this.$store.commit('cart/add', product)
     },

@@ -18,8 +18,13 @@ export const mutations = {
   addProduct(state, product) {
     state.catalogue.push(product)
   },
-  addCategory(state, category) {
-    state.categories.push(category)
+  ADD_CATEGORY(state, category) {
+    state.selectedCategories.push(category)
+  },
+  REMOVE_CATEGORY(state, category) {
+    state.selectedCategories = state.selectedCategories.filter(
+      selectedCategory => selectedCategory != category
+    )
   }
 }
 export const actions = {
@@ -44,7 +49,10 @@ export const actions = {
     context.commit('SET_LOADING_STATUS', false)
     context.commit('SET_CATEGORIES', response.data)
   },
-  setCategory(context, category){
-    
+  pushCategory(context, category) {
+    context.commit('ADD_CATEGORY', category)
+  },
+  removeCategory(context, category) {
+    context.commit('REMOVE_CATEGORY', category)
   }
 }

@@ -1,13 +1,17 @@
 <template>
-  <v-card outlined hover :elevation="mobile ? 1:undefined">
+  <v-card outlined hover :elevation="mobile ? 1 : undefined">
     <v-card-title
       class="card-title body-1 text-truncate primary--background-color"
-    >{{product.title}}</v-card-title>
+      >{{ product.title }}</v-card-title
+    >
 
     <v-img height="200px" contain :src="product.img" :alt="product.description">
       <template v-slot:placeholder>
         <v-row class="fill-height ma-0" align="center" justify="center">
-          <v-progress-circular color="accent" indeterminate></v-progress-circular>
+          <v-progress-circular
+            color="accent"
+            indeterminate
+          ></v-progress-circular>
         </v-row>
       </template>
     </v-img>
@@ -21,7 +25,7 @@
 
     <v-expand-transition>
       <div v-show="expand">
-        <v-card-text>{{product.description}}</v-card-text>
+        <v-card-text>{{ product.description }}</v-card-text>
       </div>
     </v-expand-transition>
     <v-divider></v-divider>
