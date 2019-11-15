@@ -28,7 +28,12 @@
         </v-list-item>
         <v-list-item class="snipcart-checkout" v-ripple>
           <v-list-item-action>
-            <v-icon>mdi-cart</v-icon>
+            <v-badge>
+              <template v-slot:badge>
+                <span class="snipcart-items-count"></span>
+              </template>
+              <v-icon>mdi-cart</v-icon>
+            </v-badge>
           </v-list-item-action>
           <v-list-item-content>
             <v-list-item-title class="secondary--text text-capitalize" v-text="'Checkout'" />
